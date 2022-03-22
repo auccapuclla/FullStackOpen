@@ -2,4 +2,4 @@
 **.env
 **/silent.git
 **build
-**DS_Store
+**.DS_Store
