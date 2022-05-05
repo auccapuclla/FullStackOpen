@@ -91,7 +91,8 @@ const PersonForm = ({ persons,setPersons,setMessage }) =>
             personService
               .create(personObject)
               .then(resPerson => {
-                setPersons(persons.concat(resPerson))
+                setPersons(persons.concat(personObject))
+                
                 setMessage({text: `Added ${personObject.name}`, status: 'success'})
                 setTimeout( () => {
                                   setMessage({text: null})
@@ -140,6 +141,7 @@ const App = () => {
       <MainTitle title={"Phonebook"} />
       <Notification message={message}/>
       <Filter persons={persons} />
+      {console.log(persons)}
       <Title title={"add a new"} />
       <PersonForm persons={persons} setPersons={setPersons} setMessage={setMessage} />  
       <Title title={"Numbers"} />
